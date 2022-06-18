@@ -42,12 +42,11 @@ VLAN
 配置交换机S1和S2的互联接口为Trunk接口，并仅允许VLAN 2、3通过  
 [S1-GigabitEthernet0/0/10]`port link-type trunk`  
 [S1-GigabitEthernet0/0/10]`port trunk allow-pass vlan 2 3`  
-[S1-GigabitEthernet0/0/10]`undo port trunk allow-pass vlan 1`  
 [S2-GigabitEthernet0/0/10]`port link-type trunk`  
 [S2-GigabitEthernet0/0/10]`port trunk allow-pass vlan 2 3`  
-[S2-GigabitEthernet0/0/10]`undo port trunk allow-pass vlan 1`  
 
-5. 配置基于MAC地址划分VLAN
+
+1. 配置基于MAC地址划分VLAN
 如实验组网图所示，PC3的MAC地址为：a008-6fe1-0c46。希望该PC可以通过S2的GigabitEthernet0/0/1端口接入网络，并且通过VLAN 10进行数据传递.  
 配置交换机S2，让PC3的MAC地址与VLAN 10关联  
 [S2-vlan10]`mac-vlan mac-address a008-6fe1-0c46 priority 0`  
@@ -70,8 +69,8 @@ VLAN
 [S1-GigabitEthernet0/0/3]`port hybrid pvid vlan 100`  
 [S1-GigabitEthernet0/0/3]`port hybrid untagged vlan 100 to 102`  
 [S1-GigabitEthernet0/0/4]`port link-type hybrid`  
-[S1-GigabitEthernet0/0/4]`port hybrid pvid vlan 101`  
-[S1-GigabitEthernet0/0/4]`port hybrid untagged vlan 100 to 102` 
+[S1-GigabitEthernet0/0/4]`port hybrid pvid vlan 101`    
+[S1-GigabitEthernet0/0/4]`port hybrid untagged vlan 100 to 102`  
 [S1-GigabitEthernet0/0/5]`port link-type hybrid`  
 [S1-GigabitEthernet0/0/5]`port hybrid pvid vlan 102`  
 [S1-GigabitEthernet0/0/5]`port hybrid untagged vlan 100 to 102`
