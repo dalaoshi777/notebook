@@ -12,8 +12,6 @@
 
 **网络连接图**
 ![网络连接图](images/实验4：以太网基础与VLAN配置实验/01.png)
-
-
 ---
 **配置步骤:**
 1. 设备命名  
@@ -44,7 +42,6 @@ VLAN
 [S1-GigabitEthernet0/0/10]`port trunk allow-pass vlan 2 3`  
 [S2-GigabitEthernet0/0/10]`port link-type trunk`  
 [S2-GigabitEthernet0/0/10]`port trunk allow-pass vlan 2 3`  
-
 
 1. 配置基于MAC地址划分VLAN
 如实验组网图所示，PC3的MAC地址为：a008-6fe1-0c46。希望该PC可以通过S2的GigabitEthernet0/0/1端口接入网络，并且通过VLAN 10进行数据传递.  
